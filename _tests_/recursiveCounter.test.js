@@ -25,7 +25,7 @@ test('$0.01 should return 1 pennies', () => {
   const money = .01;
   expect(recursiveCounter(money, '')).toEqual('1 pennies')
 });
-test('$4.96 should return 1 pennies', () => {
+test('$4.96 should return 19 quarters 1 dimes 1 nickels 1 pennies', () => {
   const money = 4.91;
   expect(recursiveCounter(money, '')).toEqual('19 quarters 1 dimes 1 nickels 1 pennies')
 });
