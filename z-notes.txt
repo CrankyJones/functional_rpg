@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+
+combat: recursive?
+  player action,
+   ( - attack OR
+    - cast OR
+    - ....throw candle?)
+  enemy hp check,
+  enemy action,
+  player hp check
+
+
+between combat:
+  move around?,
+  rest,
+  search,
+  use items?,
+  make candles
+
+
+win condition?
+  make x candles?
+  defeat boss
+
+loss: hp == 0 (...unless you have x # of candles?)
