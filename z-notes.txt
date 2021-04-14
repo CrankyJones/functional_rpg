@@ -13,11 +13,12 @@ combat: recursive?
   player action,
    ( - attack OR
     - cast OR
+    - flee OR
     - ....throw candle?)
   enemy hp check,
   enemy action,
   player hp check
-
+  flee?
 
 between combat:
   move around?,

@@ -12,6 +12,7 @@ const isAlive = (character) => ({
 const canAttack = (character) => ({
   attack: (target) => {
     target.hp -= character.strength;
+    character.stamina -= 1;
 
   }
 });
@@ -19,6 +20,7 @@ const canAttack = (character) => ({
 const canCast = (character) => ({
   castFirebolt: (target) => {
     target.hp -= character.intelligence;
+    character.mana -= 1;
   }
 });
 
@@ -42,10 +44,11 @@ const createGenericDude = (name) => {
     mana: 10,
     strength: 5,
     intelligence: 5,
+    inventory: [],
     xp: 10
   }
 
-  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character)};
+  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character), ...isAlive(character)};
 };
 
 
@@ -56,10 +59,11 @@ const createGenericChild = (name) => {
     mana: 0,
     strength: 1,
     intelligence: 1,
+    inventory: [],
     xp: 2
   }
 
-  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character)};
+  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character), ...isAlive(character)};
 };
 
 const createBossDude = (name) => {
@@ -69,8 +73,9 @@ const createBossDude = (name) => {
     mana: 25,
     strength: 20,
     intelligence: 20,
+    inventory: [],
     xp: 100
   }
 
-  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character)};
+  return {...character, ...canAttack(character), ...canCast(character), ...canHoldThings(character), ...canUseItems(character), ...isAlive(character)};
 };
